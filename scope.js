@@ -68,11 +68,24 @@
 //     console.log(a); //10
 // }
 
-{
-    let a = 10;
-    {
-        let a = 20;
-        console.log(a); // 20
+// {
+//     let a = 10;
+//     {
+//         let a = 20;
+//         console.log(a); // 20
+//     }
+//     console.log(a); //10
+// }
+
+function foo() {
+    console.log(a); // undefined
+    if (true) {
+        a();
+        function a() {
+            console.log(9);
+        }
     }
-    console.log(a); //10
+    console.log(a);
 }
+
+foo();
